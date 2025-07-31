@@ -1,0 +1,48 @@
+{
+  "name": "poc-abuse-prevention-challenge",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "dev:server": "nodemon --watch server --exec \"ts-node -P tsconfig.server.json server/server.ts\"",
+    "dev:full": "concurrently -k -n server,client -c yellow,cyan \"npm:dev:server\" \"npm:dev\"",
+    "build": "tsc -b && vite build",
+    "build:analyze": "npm run build && npx vite-bundle-analyzer dist",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "test:i18n": "echo 'Testing i18n URLs:' && echo '🇦🇷 http://localhost:5174?country=AR&lang=es-AR' && echo '🇧🇷 http://localhost:5174?country=BR&lang=pt-BR' && echo '🇲🇽 http://localhost:5174?country=MX&lang=es-MX'",
+    "test:ssr": "curl -s http://localhost:3000/verify-data-ssr?country=BR\\&lang=pt-BR | head -20"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-google-recaptcha": "^3.1.0",
+    "react-router-dom": "^7.5.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.15.3",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@types/react-google-recaptcha": "^2.1.9",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.22.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "nodemon": "^3.1.10",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.1",
+    "concurrently": "^8.2.2",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.26.1",
+    "vite": "^6.3.1"
+  }
+}

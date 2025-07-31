@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "target": "ES2020",
+      "module": "CommonJS",
+      "moduleResolution": "node",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "outDir": "dist-server",
+      "rootDir": "server",
+      "types": ["node", "express", "react"],
+      "jsx": "react-jsx",
+      "allowSyntheticDefaultImports": true
+    },
+    "include": ["server/**/*"]
+  }
+  

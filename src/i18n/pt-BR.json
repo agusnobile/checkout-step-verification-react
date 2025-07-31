@@ -1,0 +1,43 @@
+{
+  "verify": {
+    "title": "Estamos quase prontos...",
+    "subtitle": "Atualize seus dados de contato",
+    "description": "Por favor verifique e atualize suas informações antes de continuar"
+  },
+  "form": {
+    "fullname": "Nome completo",
+    "email": "E-mail", 
+    "country": "País",
+    "address": "Endereço",
+    "phone": "Telefone"
+  },
+  "buttons": {
+    "back": "Voltar",
+    "next": "Próximo",
+    "confirm": "Confirmar dados",
+    "loading": "Carregando..."
+  },
+  "validation": {
+    "required": "Este campo é obrigatório",
+    "invalid_email": "Formato de e-mail inválido",
+    "min_length": "Deve ter pelo menos {min} caracteres",
+    "invalid_phone": "Formato de telefone inválido"
+  },
+  "captcha": {
+    "verify": "Verifique que você não é um robô",
+    "loading": "Carregando verificação...",
+    "error": "Erro ao carregar captcha. Tente novamente",
+    "will_load": "O captcha será carregado quando você começar a preencher o formulário"
+  },
+  "messages": {
+    "loading": "Carregando...",
+    "error": "Erro: A URL não contém os parâmetros necessários.",
+    "error_access": "Por favor, acesse através de um fluxo válido."
+  },
+  "feedback": {
+    "title": "Dados confirmados!",
+    "referrer": "Referência:",
+    "captcha": "Captcha:",
+    "continue": "Continuar para o Checkout"
+  }
+} 
